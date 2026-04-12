@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Manual de Supervivencia Nutricional</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.png">
+</head>
+
+<body>
+
+<header>
+
+  <center>
+    <img src="img/logo.jpg.avif" alt="Logo de alimentación saludable" width="120">
+  </center>
+
+  <h1>Manual de Supervivencia Nutricional</h1>
+
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#consejos">Consejos</a></li>
+      <li><a href="#recetas">Recetas</a></li>
+      <li><a href="#tabla">Tabla</a></li>
+      <li><a href="#imc">IMC</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<main>
+
+<section id="inicio">
+  <h2>¿De qué trata esta guía?</h2>
+  <p>Esta página está pensada para ayudarte a comer de forma saludable con bajo presupuesto.</p>
+
+  <p>Visitá este sitio para más información:
+    <a href="https://www.who.int/es" target="_blank">Organización Mundial de la Salud</a>
+  </p>
+</section>
+
+<section id="consejos">
+  <h2>Consejos básicos</h2>
+
+  <ul>
+    <li>Evitar comida ultraprocesada</li>
+    <li>Consumir proteínas accesibles</li>
+    <li>Planificar las comidas</li>
+  </ul>
+</section>
+
+<section id="recetas">
+  <h2>Video ilustrativo</h2>
+
+  <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/RWBfr7IZ9cs"
+    title="Video de nutrición"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+
+  <article>
+    <h3>Arroz con huevo</h3>
+    <p>Una comida simple, económica y nutritiva.</p>
+  </article>
+
+  <article>
+    <h3>Pollo con verduras</h3>
+    <p>Ideal para obtener proteínas.</p>
+  </article>
+
+</section>
+
+<section id="tabla">
+  <h2>Tabla nutricional básica</h2>
+
+  <table border="1">
+    <tr>
+      <th>Alimento</th>
+      <th>Calorías</th>
+      <th>Proteína</th>
+    </tr>
+    <tr>
+      <td>Arroz</td>
+      <td>130</td>
+      <td>2.7g</td>
+    </tr>
+    <tr>
+      <td colspan="2">Pollo</td>
+      <td>31g</td>
+    </tr>
+  </table>
+
+</section>
+
+<section id="imc">
+  <h2>Calculá tu estado físico</h2>
+
+  <label>Peso (kg):</label>
+  <input type="number" id="peso"><br><br>
+
+  <label>Altura (m):</label>
+  <input type="number" step="0.01" id="altura"><br><br>
+
+  <label>Sexo:</label>
+  <select id="sexo">
+    <option value="hombre">Hombre</option>
+    <option value="mujer">Mujer</option>
+  </select><br><br>
+
+  <button onclick="calcularIMC()">Calcular</button>
+
+  <p id="resultado"></p>
+</section>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+
+  <form>
+    <label>Nombre:</label>
+    <input type="text"><br><br>
+
+    <label>Email:</label>
+    <input type="email"><br><br>
+
+    <label>Mensaje:</label>
+    <textarea></textarea><br><br>
+
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2026 - Lucas Pereyra</p>
+</footer>
+
+<script>
+function calcularIMC() {
+  let peso = parseFloat(document.getElementById("peso").value);
+  let altura = parseFloat(document.getElementById("altura").value);
+  let sexo = document.getElementById("sexo").value;
+
+  if (isNaN(peso) || isNaN(altura) || altura === 0) {
+    document.getElementById("resultado").innerText = "Ingresá valores válidos";
+    return;
+  }
+
+  let imc = peso / (altura * altura);
+  let resultado = "";
+
+  if (imc < 18.5) {
+    resultado = "Bajo peso";
+  } else if (imc < 25) {
+    resultado = "Peso normal";
+  } else if (imc < 30) {
+    resultado = "Sobrepeso";
+  } else {
+    resultado = "Obesidad";
+  }
+
+  document.getElementById("resultado").innerText =
+    "Tu IMC es " + imc.toFixed(2) + " → " + resultado + " (" + sexo + ")";
+}
+</script>
+
+</body>
+</html>
