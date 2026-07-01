@@ -1,0 +1,117 @@
+/* style.css — Minimalist responsive styling for Manual de Supervivencia Nutricional */
+:root{
+	--bg:#f7faf9;
+	--card:#ffffff;
+	--text:#0f1724;
+	--muted:#6b7280;
+	--accent:#0ea5a4;
+	--accent-600:#0b827d;
+	--radius:12px;
+}
+
+/* Reset basics */
+*{box-sizing:border-box}
+html,body{min-height:100%}
+body{
+	margin:0;
+	font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+	background:var(--bg);
+	color:var(--text);
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	line-height:1.45;
+	padding:24px 12px;
+}
+
+/* Layout */
+main{max-width:980px;margin:18px auto;padding:6px 8px}
+
+/* Header */
+header{
+	background: linear-gradient(135deg, rgba(14,165,164,0.06), rgba(11,130,125,0.04));
+	border-radius:var(--radius);
+	padding:20px 18px;
+	box-shadow: 0 6px 18px rgba(11,15,25,0.04);
+	text-align:center;
+}
+
+/* Ensure legacy <center> centers properly */
+center{display:block;text-align:center}
+header center img, header img{display:block;margin:0 auto 8px;border-radius:18px}
+header h1{margin:6px 0 12px;font-size:1.6rem;letter-spacing:-0.5px}
+
+/* Navigation */
+nav ul{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:0;margin:6px 0 0;list-style:none}
+nav ul li{margin:0}
+nav a{display:inline-block;padding:8px 12px;border-radius:999px;text-decoration:none;color:var(--accent-600);font-weight:600;border:1px solid transparent}
+nav a:hover, nav a:focus{background:rgba(14,165,164,0.08);border-color:rgba(14,165,164,0.12);outline:none}
+
+/* Sections as cards */
+section{background:var(--card);border-radius:12px;padding:18px;margin:18px 0;box-shadow:0 8px 20px rgba(11,15,25,0.03)}
+section h2{margin-top:0;color:var(--accent-600);font-size:1.15rem}
+p{color:var(--muted);margin:8px 0}
+
+/* Links */
+a{color:var(--accent);font-weight:600}
+a[target]{text-decoration:underline}
+
+/* Lists */
+ul{padding-left:1.25rem}
+
+/* Video responsive */
+.video-wrapper{position:relative;width:100%;padding-top:56.25%;}
+iframe{position:relative;width:100%;height:315px;border-radius:8px;border:0}
+
+/* Articles */
+article{padding:10px 0;border-top:1px dashed #f0f3f4;margin-top:12px}
+article h3{margin:6px 0 4px}
+
+/* Table styling */
+table{width:100%;border-collapse:collapse;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,1));box-shadow:0 6px 18px rgba(11,15,25,0.03);border-radius:10px;overflow:hidden}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid rgba(15,23,36,0.04)}
+th{background:linear-gradient(90deg, rgba(236,253,250,0.95), rgba(255,255,255,0.95));font-weight:700;color:var(--accent-600)}
+tr:nth-child(even) td{background:#fbfdfe}
+
+/* Forms and controls */
+label{display:block;color:var(--muted);font-weight:700;margin-bottom:6px}
+input[type="text"],input[type="email"],input[type="number"],select,textarea{
+	width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(15,23,36,0.08);background:linear-gradient(180deg,#fff,#fbfdfe);margin-bottom:10px;font-size:0.95rem;color:var(--text)
+}
+input:focus,select:focus,textarea:focus{outline:2px solid rgba(14,165,164,0.12);border-color:rgba(14,165,164,0.18)}
+button{background:var(--accent);color:white;border:none;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
+button:hover{background:var(--accent-600)}
+
+#filtroConsejo{width:100%;margin:10px 0 4px;padding:10px 12px;border-radius:10px;border:1px solid rgba(15,23,36,0.08);background:#fff}
+#error-text, .error-text{color:#b91c1c;font-weight:700;margin-top:6px}
+.success-text{color:#047857;font-weight:700;margin-top:6px}
+.highlight{background:rgba(14,165,164,0.1);border-left:4px solid var(--accent);padding:10px;border-radius:10px}
+
+#resultado{margin-top:10px;font-weight:700;color:var(--accent-600)}
+
+footer{max-width:980px;margin:8px auto 0;text-align:center;color:var(--muted);font-size:0.9rem}
+
+/* Small screens */
+@media (max-width:640px){
+	body{padding:12px}
+	header h1{font-size:1.2rem}
+	nav ul{gap:6px}
+	section{padding:14px}
+	th,td{padding:8px}
+	iframe{height:200px}
+}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* Helpers */
+.center{text-align:center}
+.muted{color:var(--muted)}
+
+/* Ensure legacy inline attributes don't break layout */
+img[width]{max-width:100%;height:auto}
+
+/* Strong selector to override UA table border */
+table[border], table[border] th, table[border] td{border:none}
+
+/* Provide spacing for the header nav when content is dense */
+header + main{margin-top:10px}
+
