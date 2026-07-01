@@ -1,26 +1,26 @@
 /* style.css — Minimalist responsive styling for Manual de Supervivencia Nutricional */
 :root{
-  --bg:#f7faf9;
-  --card:#ffffff;
-  --text:#0f1724;
-  --muted:#6b7280;
-  --accent:#0ea5a4;
-  --accent-600:#0b827d;
-  --radius:12px;
+	--bg:#f7faf9;
+	--card:#ffffff;
+	--text:#0f1724;
+	--muted:#6b7280;
+	--accent:#0ea5a4;
+	--accent-600:#0b827d;
+	--radius:12px;
 }
 
 /* Reset basics */
 *{box-sizing:border-box}
-html,body{height:100%}
+html,body{min-height:100%}
 body{
-  margin:0;
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background:var(--bg);
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.45;
-  padding:24px 12px;
+	margin:0;
+	font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+	background:var(--bg);
+	color:var(--text);
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	line-height:1.45;
+	padding:24px 12px;
 }
 
 /* Layout */
@@ -28,11 +28,11 @@ main{max-width:980px;margin:18px auto;padding:6px 8px}
 
 /* Header */
 header{
-  background: linear-gradient(135deg, rgba(14,165,164,0.06), rgba(11,130,125,0.04));
-  border-radius:var(--radius);
-  padding:20px 18px;
-  box-shadow: 0 6px 18px rgba(11,15,25,0.04);
-  text-align:center;
+	background: linear-gradient(135deg, rgba(14,165,164,0.06), rgba(11,130,125,0.04));
+	border-radius:var(--radius);
+	padding:20px 18px;
+	box-shadow: 0 6px 18px rgba(11,15,25,0.04);
+	text-align:center;
 }
 
 /* Ensure legacy <center> centers properly */
@@ -75,11 +75,16 @@ tr:nth-child(even) td{background:#fbfdfe}
 /* Forms and controls */
 label{display:block;color:var(--muted);font-weight:700;margin-bottom:6px}
 input[type="text"],input[type="email"],input[type="number"],select,textarea{
-  width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(15,23,36,0.08);background:linear-gradient(180deg,#fff,#fbfdfe);margin-bottom:10px;font-size:0.95rem;color:var(--text)
+	width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(15,23,36,0.08);background:linear-gradient(180deg,#fff,#fbfdfe);margin-bottom:10px;font-size:0.95rem;color:var(--text)
 }
 input:focus,select:focus,textarea:focus{outline:2px solid rgba(14,165,164,0.12);border-color:rgba(14,165,164,0.18)}
 button{background:var(--accent);color:white;border:none;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
 button:hover{background:var(--accent-600)}
+
+#filtroConsejo{width:100%;margin:10px 0 4px;padding:10px 12px;border-radius:10px;border:1px solid rgba(15,23,36,0.08);background:#fff}
+#error-text, .error-text{color:#b91c1c;font-weight:700;margin-top:6px}
+.success-text{color:#047857;font-weight:700;margin-top:6px}
+.highlight{background:rgba(14,165,164,0.1);border-left:4px solid var(--accent);padding:10px;border-radius:10px}
 
 #resultado{margin-top:10px;font-weight:700;color:var(--accent-600)}
 
@@ -87,12 +92,12 @@ footer{max-width:980px;margin:8px auto 0;text-align:center;color:var(--muted);fo
 
 /* Small screens */
 @media (max-width:640px){
-  body{padding:12px}
-  header h1{font-size:1.2rem}
-  nav ul{gap:6px}
-  section{padding:14px}
-  th,td{padding:8px}
-  iframe{height:200px}
+	body{padding:12px}
+	header h1{font-size:1.2rem}
+	nav ul{gap:6px}
+	section{padding:14px}
+	th,td{padding:8px}
+	iframe{height:200px}
 }
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
@@ -109,3 +114,4 @@ table[border], table[border] th, table[border] td{border:none}
 
 /* Provide spacing for the header nav when content is dense */
 header + main{margin-top:10px}
+

@@ -1,100 +1,35 @@
-# 🥗 Manual Nutricional
+# Manual de Supervivencia Nutricional
 
-Proyecto web desarrollado como práctica de desarrollo frontend utilizando **HTML, CSS y JavaScript**.
+Proyecto "Manual de Supervivencia Nutricional" sobre hábitos alimentarios saludables y económicos.
 
-## 📌 Descripción
+## Tecnologías utilizadas
 
-Este proyecto consiste en una página web informativa orientada a nutrición y hábitos saludables.
+- HTML
+- CSS
+- JavaScript
 
-Incluye:
+## Funcionalidades implementadas
 
-* Diseño responsive.
-* Interfaz desarrollada con HTML y CSS.
-* Calculadora de IMC (Índice de Masa Corporal).
-* Formulario de contacto.
-* Organización del contenido por secciones.
+- `script.js` como archivo JavaScript externo enlazado desde `main.html`.
+- Array `consejos` para mostrar y filtrar recomendaciones de nutrición.
+- Buscador de consejos con un evento `input` que filtra resultados en tiempo real.
+- Cálculo de IMC con validación de datos y resultados mostrados en pantalla.
+- Formulario de contacto con validación y manejo de errores usando `try/catch`.
+- DOM manipulado dinámicamente: creación de consejos, cambio de texto de mensajes y clases de estado.
 
----
+## Interacciones clave
 
-## 🚀 Tecnologías utilizadas
+- `input` para filtrar la lista de consejos.
+- `click` para calcular el IMC.
+- `submit` para validar y procesar el formulario de contacto.
 
-* HTML5
-* CSS3
-* JavaScript
+## Estructura de archivos
 
----
+- `index.html`: página de redirección hacia `main.html`.
+- `main.html`: contenido principal del proyecto.
+- `style.css`: estilos responsivos y de interfaz.
+- `script.js`: lógica interactiva y validación.
 
-## 📁 Estructura del proyecto
+## Enlace al repositorio
 
-```plaintext
-manual-nutricional-main/
-│
-├── index.html
-├── main.html
-├── style.css
-└── README.md
-```
-
----
-
-## ⚙️ Instalación y ejecución
-
-1. Clonar el repositorio:
-
-```bash
-git clone https://github.com/USUARIO/manual-nutricional-main.git
-```
-
-2. Ingresar a la carpeta:
-
-```bash
-cd manual-nutricional-main
-```
-
-3. Abrir `index.html` en el navegador.
-
-También se puede ejecutar utilizando **Live Server** desde Visual Studio Code.
-
----
-
-## 📊 Funcionalidades
-
-### Calculadora IMC
-
-Permite ingresar:
-
-* Peso
-* Altura
-* Sexo
-
-Generando un resultado automático.
-
-### Formulario de contacto
-
-Permite completar:
-
-* Nombre
-* Email
-* Mensaje
-
----
-
-## 🎨 Diseño
-
-El sitio utiliza:
-
-* Layout adaptable.
-* Variables CSS.
-* Diseño limpio y responsive.
-
----
-
-## 👨‍💻 Autor
-
-Lucas Pereyra
-
----
-
-## 📄 Licencia
-
-Proyecto académico / educativo.
+Revisá el repositorio en GitHub para ver el historial de commits y los avances del proyecto.
